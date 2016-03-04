@@ -32,7 +32,7 @@ angular.module('starter.controllers', [])
     console.log('running connect');
     $scope.detail.load = "connecting";
     $ionicLoading.show({
-    template:'Connecting'
+    template:'Connecting...<ion-spinner></ion-spinner>'
   })
     ws = new WebSocket(wsUriC);
     ws.onopen = function(event) {
@@ -81,7 +81,7 @@ angular.module('starter.controllers', [])
 
   $scope.wsClose = function() {
     $ionicLoading.show({
-    template:'Disconnecting'
+    template:'Disconnecting...<ion-spinner></ion-spinner>'
   });
     $scope.announce.status = "Closing";
     ws.close();
